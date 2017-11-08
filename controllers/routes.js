@@ -7,8 +7,15 @@ router.get('/', function (req, res){
         console.log(burger_data);
         res.render('index', {burger_data});
     })
-   
-// created in views folder
+ 
+router.put("/burgers/update", function(){
+    burger.update(req.body.burger_id, function(result){
+        console.log(result);
+        res.redirect("/'");
+    });
+
+ })    
+
 })
 
 module.exports = router;

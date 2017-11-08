@@ -8,6 +8,15 @@
          <div class="col-md-6">
              {{#each burger_data}}
               {{#unless this.devoured}}
-         </div>
+         <pre>{{this.id}}. {{this.burger_name}}</pre>     
+    </div >
+    <div class="col-md-6">
+        <form method="POST" action="/burgers/update?_method=PUT" class="button-size">
+           <input type="hidden"  name="burger_id" type="text" value={{this.id}}>
+           <button type="submit" class="btn bn-danger">NOM NOM</button>
+        </form>
+    </div>
+    {{/unless}}
+    {{/each}}
     </div>
 </div>
