@@ -22,5 +22,5 @@ var routes = require('./controllers/routes.js');
 app.use("/", routes)
 
 
-var port = 3000;
+var port = process.env.PORT || 3000;
 app.listen(port);
