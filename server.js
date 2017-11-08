@@ -14,10 +14,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(methodOverride("_method"));
 
 // Set Handlebars.
-
-
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
+
+// require our routes 
+var routes = require('./controllers/routes.js');
+app.use("/", routes)
 
 
 var port = 3000;
